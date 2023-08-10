@@ -51,6 +51,8 @@ app.use((req, res, next) => {
               if(targetUrl){
                   res.set("Location", finalUrl);
                   res.setHeader("Location", finalUrl);
+                  res.setHeader("Cache-Control", "no-store"); // Prevent caching
+                  res.setHeader("X-Frame-Options", "DENY");    // Set X-Frame-Options      
                   res.sendStatus(302).end(); // Send a redirect response
               }
               else if(targetUrlv2){
@@ -98,3 +100,4 @@ const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`running on port ${port}`);
 });
+
