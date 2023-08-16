@@ -66,8 +66,9 @@ app.use((req, res, next) => {
                  <a id="dynamic-link" href="${finalUrl}"></a>
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
-                    const dynamicLink = document.getElementById('dynamic-link');
-                    dynamicLink.click();
+                    window.setTimeout(()=>{
+                      window.location.assign("${finalUrl}")
+                    },1000)
                     });
                 </script>
                 </body>
