@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Define a route for the cloaked affiliate links
-app.get('/cloaked', async (req, res) => {
+app.get('/mashup', async (req, res) => {
   const originalUrl = 'https://redirecting7.eu/p/GebT/0Fj3/et6K/'; // Replace with your affiliate link
   const cloakedUrl = modifyAffiliateLink(originalUrl);
 
